@@ -1,11 +1,12 @@
 import { createServer } from "http";
 import dotenv from "dotenv";
+import { requestHandler } from "./app";
 
 dotenv.config();
 
 const PORT = process.env.PORT || 4000;
 
-const server = createServer();
+const server = createServer(requestHandler);
 
 server.listen(PORT, () => {
   console.log(
