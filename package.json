@@ -8,7 +8,7 @@
   "scripts": {
     "start:dev": "ts-node-dev src/server.ts",
     "build": "tsc",
-    "start:prod": "node dist/server.js",
+    "start:prod": "tsc && node dist/src/server.js",
     "start:multi": "ts-node-dev src/cluster.ts",
     "test": "jest"
   },
