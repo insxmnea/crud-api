@@ -1,18 +1,15 @@
 import { createServer } from "http";
 import dotenv from "dotenv";
+import { requestHandler } from "./app";
 
 dotenv.config();
 
 const PORT = process.env.PORT || 4000;
 
-const server = createServer();
+const server = createServer(requestHandler);
 
 server.listen(PORT, () => {
-  console.log(
-    `Server is running on port ${PORT} in ${
-      process.env.NODE_ENV || "development"
-    } mode`
-  );
+  console.log(`Server is running on port ${PORT}`);
 });
 
 server.on("error", (error: NodeJS.ErrnoException) => {
